@@ -1,13 +1,13 @@
-.texto{
+.texto {
     color: green;
     font-weight: bold;
     text-align: center;
 }
 
-#container-produto{
-background-color: azure;
+#container-produto {
+    background-color: azure;
 }
 
-.precoP{
-color: #cc6d00;
+.precoP {
+    color: #cc6d00;
 }

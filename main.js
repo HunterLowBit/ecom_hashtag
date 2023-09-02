@@ -36,4 +36,4 @@ for (const produtoCatalago of catalago) {
 </div>`;
 
   document.getElementById("container-produto").innerHTML += cartaoProduto;
-};
+}
