@@ -1,3 +1,5 @@
-p {
+.texto{
     color: green;
+    font-weight: bold;
+    text-align: center;
 }
