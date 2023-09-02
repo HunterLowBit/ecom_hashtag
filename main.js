@@ -31,7 +31,7 @@ for (const produtoCatalago of catalago) {
     style="height:200px">
     <p>${produtoCatalago.marca}</p>        
     <p>${produtoCatalago.nome}</p>
-    <p>$${produtoCatalago.preco}</p>
+    <p class="precoP">$${produtoCatalago.preco}</p>
     <button>Adicionar</button>
 </div>`;
 

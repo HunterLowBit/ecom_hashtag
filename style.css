@@ -3,3 +3,11 @@
     font-weight: bold;
     text-align: center;
 }
+
+#container-produto{
+background-color: azure;
+}
+
+.precoP{
+color: #cc6d00;
+}
