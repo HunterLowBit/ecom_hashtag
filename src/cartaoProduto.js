@@ -1,18 +1,27 @@
-import { catalago } from "./utilidades";
-export function renderizarCatalago() {
-  for (const produtoCatalago of catalago) {
-    const cartaoProduto = `
-<div class="shadow-xl shadow-slate-400  rounded-lg w-48 m-2 flex flex-col p-1 justify-between group" id="card-produto-${produtoCatalago.id}">
-<img 
-    src="./assets/img/${produtoCatalago.nomeArquivoImagem}" alt="${produtoCatalago.nome} HLB_Store" 
-     class="group-hover:scale-110 duration-300  my-3 rounded-lg">
-    <p class='text-sm'>${produtoCatalago.marca}</p>        
-    <p class='text-sm' '>${produtoCatalago.nome}</p>
-    <p class='text-sm'>$${produtoCatalago.preco}</p>
-    <button  class="border-4 border-black bg-black text-slate-200 p-1 hover:bg-white duration-300 hover:text-slate-950 " id='adicionar-${produtoCatalago.id}'><i class="fa-solid fa-cart-plus"></i></button>
-</div>`;
+import { catalogo } from "./utilidades";
+import { adicionarAoCarrinho } from "./menuCarrinho";
+
+export function renderizarCatalogo() {
+  for (const produtoCatalogo of catalogo) {
+    const cartaoProduto = `<div class='bg-indigo-100 border-solid w-48 m-2 flex flex-col p-2 justify-between shadow-xl shadow-black rounded-lg group' id="card-produto-${produtoCatalogo.id}">
+        <img
+        src="./assets/img/${produtoCatalogo.imagem}"
+        alt="Produto 1 HLB Store."
+        class='group-hover:scale-110 duration-300 my-3 rounded-lg'
+        />
+        <p class='text-sm'>${produtoCatalogo.marca}</p>
+        <p class='text-sm'>${produtoCatalogo.nome}</p>
+        <p class='text-sm'>$${produtoCatalogo.preco}</p>
+        <button id='adicionar-${produtoCatalogo.id}' class='bg-slate-950  text-slate-200 hover:text-black hover:bg-white duration-500  round-lg'
+        ><i class="fa-solid fa-cart-plus"></i></button>
+        </div>`;
 
     document.getElementById("container-produto").innerHTML += cartaoProduto;
-    document.getElementById("adicionar-${produtoCatalago.id}");
+  }
+
+  for (const produtoCatalogo of catalogo) {
+    document
+      .getElementById(`adicionar-${produtoCatalogo.id}`)
+      .addEventListener("click", () => adicionarAoCarrinho(produtoCatalogo.id));
   }
 }
