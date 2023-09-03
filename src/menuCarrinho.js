@@ -104,7 +104,7 @@ function desenharProdutoNoCarrinho(idProduto) {
   }</p>
         <button class='ml-2' id='incrementar-produto-${produto.id}'>+</button>
     </div>`;
-  //<article class="flex bg-slate-100 rounded-lg p-1 relative">codigo do cartao do produto</article>
+ 
 
   elementoArticle.innerHTML = cartaoProdutoCarrinho;
   containerProdutosCarrinho.appendChild(elementoArticle);
