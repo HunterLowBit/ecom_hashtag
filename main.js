@@ -25,10 +25,10 @@ const catalago = [
 
 for (const produtoCatalago of catalago) {
   const cartaoProduto = `
-<div id="card-produto-${produtoCatalago.id}">
+<div class="border-solid border-2 border-sky-500 w-48 my-2" id="card-produto-${produtoCatalago.id}">
 <img 
-    src="./assets/img/${produtoCatalago.nomeArquivoImagem}" alt="${produtoCatalago.nome}1 HLB_Store" 
-    style="height:200px">
+    src="./assets/img/${produtoCatalago.nomeArquivoImagem}" alt="${produtoCatalago.nome} HLB_Store" 
+    style="height:300px">
     <p>${produtoCatalago.marca}</p>        
     <p>${produtoCatalago.nome}</p>
     <p class="precoP">$${produtoCatalago.preco}</p>
