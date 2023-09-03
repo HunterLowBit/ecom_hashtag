@@ -12,12 +12,21 @@ function fecharCarrinho() {
   document.getElementById("carrinho").classList.add("right-[-360px]");
 }
 
+function irParaCheckout() {
+  if (Object.keys(idsProdutoCarrinhoComQuantidade).length === 0) {
+    return;
+  }
+  window.location.href = "./checkout.html";
+}
+
 export function inicializarCarrinho() {
   const botaoFecharCarrinho = document.getElementById("fechar-carrinho");
   const botaoAbrirCarrinho = document.getElementById("abrir-carrinho");
+  const botaoIrParaCheckout = document.getElementById("finalizar-compra");
 
   botaoFecharCarrinho.addEventListener("click", fecharCarrinho);
   botaoAbrirCarrinho.addEventListener("click", abrirCarrinho);
+  botaoIrParaCheckout.addEventListener("click", irParaCheckout);
 }
 
 function removerDoCarrinho(idProduto) {
@@ -48,7 +57,6 @@ function decrementarQuantidadeProduto(idProduto) {
 function atualizarInformacaoQuantidade(idProduto) {
   document.getElementById(`quantidade-${idProduto}`).innerText =
     idsProdutoCarrinhoComQuantidade[idProduto];
-  atualizarPrecoCarrinho();
 }
 
 function desenharProdutoNoCarrinho(idProduto) {
@@ -56,7 +64,7 @@ function desenharProdutoNoCarrinho(idProduto) {
   const containerProdutosCarrinho =
     document.getElementById("produtos-carrinho");
 
-  const elementoArticle = document.createElement("article");
+  const elementoArticle = document.createElement("article"); //<article></article>
   const articleClasses = [
     "flex",
     "bg-slate-100",
@@ -68,12 +76,13 @@ function desenharProdutoNoCarrinho(idProduto) {
   for (const articleClass of articleClasses) {
     elementoArticle.classList.add(articleClass);
   }
+  //<article class="flex bg-slate-100 rounded-lg p-1 relative"></article>
 
   const cartaoProdutoCarrinho = `<button id="remover-item-${
     produto.id
   }" class="absolute top-0 right-2">
       <i
-        class="fa-solid fa-circle-xmark text-slate-500 hover:text-orange-400 duration-300"
+        class="fa-solid fa-circle-xmark text-slate-500 hover:text-slate-800"
       ></i>
     </button>
     <img
@@ -85,7 +94,7 @@ function desenharProdutoNoCarrinho(idProduto) {
       <p class="text-slate-900 text-sm">
         ${produto.nome}
       </p>
-      <p class="text-slate-600 text-xs">Tamanho: M</p>
+      <p class="text-slate-400 text-xs">Tamanho: M</p>
       <p class="text-green-700 text-lg">$${produto.preco}</p>
     </div>
     <div class='flex text-slate-950 items-end absolute bottom-0 right-2 text-lg'>
@@ -95,6 +104,7 @@ function desenharProdutoNoCarrinho(idProduto) {
   }</p>
         <button class='ml-2' id='incrementar-produto-${produto.id}'>+</button>
     </div>`;
+  //<article class="flex bg-slate-100 rounded-lg p-1 relative">codigo do cartao do produto</article>
 
   elementoArticle.innerHTML = cartaoProdutoCarrinho;
   containerProdutosCarrinho.appendChild(elementoArticle);
@@ -133,7 +143,7 @@ export function adicionarAoCarrinho(idProduto) {
   atualizarPrecoCarrinho();
 }
 
-function atualizarPrecoCarrinho() {
+export function atualizarPrecoCarrinho() {
   const precoCarrinho = document.getElementById("preco-total");
   let precoTotalCarrinho = 0;
   for (const idProdutoNoCarrinho in idsProdutoCarrinhoComQuantidade) {
