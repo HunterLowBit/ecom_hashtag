@@ -12,13 +12,16 @@
 </head>
 
 <body>
-  <section id="carrinho" class="fixed top-0 right-[-360px] bg-orange-500 text-gray-50 h-screen w-[360px] duration-300">
+  <!-- voltar valor para right-360px-->
+  <section id="carrinho"
+    class="fixed top-0 right-[0px] 
+    bg-opacity-80  bg-black text-gray-50 h-screen w-[360px] duration-300 border-l-2 border-black flex flex-col justify-between p-4 ">
     <div id="cabecalho-carrinho" class="flex m-4 justify-between">
       <p>Meu Carrinho</p>
       <button id="fechar-carrinho"><i class="fa-solid fa-circle-xmark"></i></button>
     </div>
-    <section id="produtos-carrinho" class="mx-4">
-      <p>camisa</p>
+    <section id="produtos-carrinho" class="mx-1 justify-between ">
+      
       <p>casaco</p>
       <p>jaqueta</p>
     </section>
@@ -26,7 +29,7 @@
     <button class="bg-indigo-500 mx-2 p-1 text-slate-100">finalizar compra</button>
   </section>
 
-  <header class="flex bg-neutral-950	p-2 justify-between">
+  <header class="flex bg-neutral-950	p-2 justify-between ">
     <img class="h-16" src="https://avatars.githubusercontent.com/u/53387930?s=96&v=4" alt="Logo HunterLowBit Github" />
     <div class="text-white flex gap-5 mx-5">
       <button><i class="fa-regular fa-user"></i></button>
