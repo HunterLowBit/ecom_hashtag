@@ -1,10 +1,4 @@
-// const nomeProduto = "Casaco Branco";
-// const marca = "Zara";
-// const preco = 70;
-// const nomeArquivoImagem = "produto-1"
-// console.log(nomeProduto); // Casaco Branco
-// console.log(marca);
-// alert ("asd test");
+import { inicializarCarrinho } from "./src/menuCarrinho";
 
 const catalago = [
   {
@@ -58,3 +52,5 @@ for (const produtoCatalago of catalago) {
 
   document.getElementById("container-produto").innerHTML += cartaoProduto;
 }
+
+inicializarCarrinho();
