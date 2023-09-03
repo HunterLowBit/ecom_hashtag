@@ -1,0 +1,7 @@
+function abrirCarrinho() {
+    
+}
+
+function fecharCarrinho() {
+    
+}
