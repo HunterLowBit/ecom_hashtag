@@ -85,7 +85,7 @@ export function desenharProdutoCarrinhoSimples(
   const produto = catalogo.find((p) => p.id === idProduto);
   const containerProdutosCarrinho = document.getElementById(idContainerHtml);
 
-  const elementoArticle = document.createElement("article"); //<article></article>
+  const elementoArticle = document.createElement("article"); 
   const articleClasses = [
     "flex",
     "bg-stone-200",
@@ -99,7 +99,7 @@ export function desenharProdutoCarrinhoSimples(
   for (const articleClass of articleClasses) {
     elementoArticle.classList.add(articleClass);
   }
-  //<article class="flex bg-slate-100 rounded-lg p-1 relative"></article>
+  
 
   const cartaoProdutoCarrinho = `
     <img
@@ -117,7 +117,7 @@ export function desenharProdutoCarrinhoSimples(
     <div class='flex text-slate-950 items-end absolute bottom-0 right-2 text-lg'>
         <p id='quantidade-${produto.id}' class='ml-2'>${quantidadeProduto}</p>
     </div>`;
-  //<article class="flex bg-slate-100 rounded-lg p-1 relative">codigo do cartao do produto</article>
+  
 
   elementoArticle.innerHTML = cartaoProdutoCarrinho;
   containerProdutosCarrinho.appendChild(elementoArticle);

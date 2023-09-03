@@ -64,7 +64,7 @@ function desenharProdutoNoCarrinho(idProduto) {
   const containerProdutosCarrinho =
     document.getElementById("produtos-carrinho");
 
-  const elementoArticle = document.createElement("article"); //<article></article>
+  const elementoArticle = document.createElement("article"); 
   const articleClasses = [
     "flex",
     "bg-slate-100",
@@ -76,7 +76,7 @@ function desenharProdutoNoCarrinho(idProduto) {
   for (const articleClass of articleClasses) {
     elementoArticle.classList.add(articleClass);
   }
-  //<article class="flex bg-slate-100 rounded-lg p-1 relative"></article>
+  
 
   const cartaoProdutoCarrinho = `<button id="remover-item-${
     produto.id
@@ -104,7 +104,6 @@ function desenharProdutoNoCarrinho(idProduto) {
   }</p>
         <button class='ml-2' id='incrementar-produto-${produto.id}'>+</button>
     </div>`;
- 
 
   elementoArticle.innerHTML = cartaoProdutoCarrinho;
   containerProdutosCarrinho.appendChild(elementoArticle);
