@@ -122,3 +122,4 @@ export function desenharProdutoCarrinhoSimples(
   elementoArticle.innerHTML = cartaoProdutoCarrinho;
   containerProdutosCarrinho.appendChild(elementoArticle);
 }
+
